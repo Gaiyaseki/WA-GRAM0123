@@ -1,0 +1,2 @@
+# WA-GRAM0123
+DVI-D video card for SHARP MZ-2000/2200 using WeAct RP2350B / WeAct RP2350Bを使用したMZ-2000/2200用DVI-D出力ビデオカード
