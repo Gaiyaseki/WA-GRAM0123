@@ -20,6 +20,7 @@
 ### 📁 ファイル構成
 ```
 3dmodels/
+  WAGRAM0123CN.FCStd        互換コネクタの筐体（FreeCAD）
   WAGRAM0123CN.stl          互換コネクタの筐体（3Dプリント用）
   kicad/
     WAGRAM0123CN.kicad_sym  シンボルライブラリ
@@ -31,6 +32,8 @@ README.md
 
 ### 🔌 互換コネクタについて
 廃番となった拡張コネクタ **HIROSE `PCN5-53ST-1.27W`** の代わりに使える、オリジナル設計のコネクタです。
+FreeCADやKiCadを使用しはじめたばかりの頃に制作したものなので、雑な部分がかなりあります。
+特にFreeCADのデータはひどいです。ご了承の上ご使用ください。
 
 - **外形**：高さを除いて `PCN5-53ST-1.27W` とほぼ同一です。高さは異なるため、ケースや隣のスロットと干渉しないか確認してください。
 - **コンタクト**：市販のピンソケットを加工したものを使います。基板側53本、コネクタ接続側44本。本機で使用していない信号は接続していません。
@@ -89,6 +92,7 @@ A DVI-D video output card project for the **SHARP MZ-2000 / MZ-2200**, powered b
 ### 📁 Repository Layout
 ```
 3dmodels/
+  WAGRAM0123CN.FCStd        Connector housing (FreeCAD)
   WAGRAM0123CN.stl          Connector housing (for 3D printing)
   kicad/
     WAGRAM0123CN.kicad_sym  Symbol library
@@ -100,6 +104,8 @@ README.md
 
 ### 🔌 About the Compatible Connector
 An original connector design that can replace the discontinued **HIROSE `PCN5-53ST-1.27W`** expansion connector.
+These files were made when I had just started using FreeCAD and KiCad, so quite a few parts of them are rough.
+The FreeCAD data in particular is very messy. Please keep this in mind when using them.
 
 - **Outline**: Nearly identical to the `PCN5-53ST-1.27W` except for its height. Because the height differs, check clearance against the case and adjacent slots.
 - **Contacts**: Made by modifying off-the-shelf pin sockets: 53 pins on the PCB side and 44 contacts on the mating side. Signals not used by this card are not connected.
