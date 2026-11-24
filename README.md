@@ -25,7 +25,7 @@
   DVI_BASE_MZ2000.FCStd     MZ-2000用DVI-Dコネクタ基板ホルダ 外部CRTコネクタ置換(FreeCAD)
   DVI_BASE_MZ2000.stl       同上(3Dプリント用)
   DVI_BASE_MZ2200CMT.FCStd  MZ-2200用DVI-Dコネクタ基板ホルダ CMTコネクタ置換(FreeCAD)
-  DVI_BASE_MZ2000CMT.stl    同上(3Dプリント用)
+  DVI_BASE_MZ2200CMT.stl    同上(3Dプリント用)
   kicad/
     WAGRAM0123CN.kicad_sym  シンボルライブラリ
     WAGRAM0123CN.pretty/    フットプリントライブラリ
@@ -107,12 +107,16 @@ A DVI-D video output card project for the **SHARP MZ-2000 / MZ-2200**, powered b
 ### 📁 Repository Layout
 ```
 3dmodels/
-  WAGRAM0123CN.FCStd        Connector housing (FreeCAD)
-  WAGRAM0123CN.stl          Connector housing (for 3D printing)
+  WAGRAM0123CN.FCStd        GRAM compatible connector housing (FreeCAD)
+  WAGRAM0123CN.stl          GRAM compatible connector housing (for 3D printing)
+  DVI_BASE_MZ2000.FCStd     DVI-D connector board holder for MZ-2000, replaces the external CRT connector (FreeCAD)
+  DVI_BASE_MZ2000.stl       Same as above (for 3D printing)
+  DVI_BASE_MZ2200CMT.FCStd  DVI-D connector board holder for MZ-2200, replaces the CMT connector (FreeCAD)
+  DVI_BASE_MZ2200CMT.stl    Same as above (for 3D printing)
   kicad/
     WAGRAM0123CN.kicad_sym  Symbol library
     WAGRAM0123CN.pretty/    Footprint library
-    WAGRAM0123CN.step       Connector housing (for the KiCad 3D viewer, etc.)
+    WAGRAM0123CN.step       Compatible connector housing (for the KiCad 3D viewer, etc.)
 LICENSE                     CERN-OHL-P-2.0
 README.md
 ```
@@ -122,7 +126,7 @@ An original connector design that can replace the discontinued **HIROSE `PCN5-53
 These files were made when I had just started using FreeCAD and KiCad, so quite a few parts of them are rough.
 The FreeCAD data in particular is very messy. Please keep this in mind when using them.
 
-- **Outline**: Nearly identical to the `PCN5-53ST-1.27W` except for its height. Because the height differs, check clearance against the case and adjacent slots.
+- **Outline**: Nearly identical to the `PCN5-53ST-1.27W` except for its height. Because the height differs, check that it does not interfere with anything inside the computer's case.
 - **Contacts**: Made by modifying off-the-shelf pin sockets: 53 pins on the PCB side and 44 contacts on the mating side. Signals not used by this card are not connected.
 - **Design**: The internal structure, symbol and footprint are the author's original designs.
 
@@ -132,7 +136,7 @@ The FreeCAD data in particular is very messy. Please keep this in mind when usin
 - **Note**: Verify the footprint dimensions and pin assignment against your own design before ordering boards.
 
 ### 🖨️ Recommended 3D Print Settings (Bambu Lab A1 mini)
-- **Nozzle size**: **0.2 mm** (required for the fine pitch)
+- **Nozzle size**: **0.2 mm** (required for the fine pitch). A 0.4 mm nozzle is fine for the DVI-D board holders.
 - **Orientation & support**: Print with the PCB side up and the mating side down, Normal support
 
 ### 🛠️ Parts & Assembly
@@ -145,13 +149,24 @@ The contacts are made by modifying off-the-shelf parts. The author used parts so
 
 **Assembly overview** ([reference post](https://x.com/gaiyaseki/status/2123045014657982490)): Extract and bend the contacts, combine them with the round-pin sockets, and embed them in the printed housing.
 
+###  About the DVI-D Board Holders
+The DVI-D board holders are parts for mounting a pico-dvi-sock (https://github.com/wren6991/pico-dvi-sock).
+The MZ-2000 version is installed in place of the external CRT connector at the rear left of the case.
+Use the screws that held the external CRT connector, and take care not to drive them in at an angle.
+
+The MZ-2200 version is installed in place of the CMT connector at the rear center of the case.
+Fasten it with the long screws that held the CMT connector.
+I would have liked to use the external CRT connector position on the MZ-2200 as well, but that connector was too tight to remove safely, so the CMT position is used instead.
+
+The Pico-DVI-Sock is available as a finished product from various electronic parts online stores.
+
 ### ⚠️ Disclaimer
 - This is an unofficial personal design, not affiliated with Hirose Electric Co., Ltd. or Sharp Corporation.
 - Use at your own risk. The author accepts no liability for any damage arising from the use of this hardware or data.
 - Company and product names mentioned here are trademarks or registered trademarks of their respective owners.
 
 ### 📜 License
-The data published in this repository (3D model, symbol and footprint) is released under the **[CERN Open Hardware Licence Version 2 - Permissive (CERN-OHL-P-2.0)](LICENSE)**. You may use, modify, redistribute and manufacture it freely, including for commercial purposes.
+The data published in this repository (3D models, symbol and footprint) is released under the **[CERN Open Hardware Licence Version 2 - Permissive (CERN-OHL-P-2.0)](LICENSE)**. You may use, modify, redistribute and manufacture it freely, including for commercial purposes.
 
 - **If you redistribute a modified version**: keep the copyright and licence notices, and add a note stating that you modified it, with the date and a brief description of the changes.
 - **If you distribute products**: make sure recipients can access these notices (e.g. by providing the URL of this repository).
